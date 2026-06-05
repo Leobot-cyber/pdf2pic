@@ -4,6 +4,8 @@
 
 **在线首页（公开访问）：** https://leobot-cyber.github.io/pdf2pic/
 
+> **首次启用 GitHub Pages（只需一次）：** 仓库 **Settings → Pages → Build and deployment** → Source 选 **Deploy from a branch** → Branch 选 **main**，Folder 选 **/docs** → **Save**。约 1 分钟后首页即可访问。
+
 ## 下载
 
 [![Latest Release](https://img.shields.io/github/v/release/Leobot-cyber/pdf2pic?label=Latest%20Release&style=flat-square)](https://github.com/Leobot-cyber/pdf2pic/releases/latest)

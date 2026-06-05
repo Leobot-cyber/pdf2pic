@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -17,6 +20,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Get version
+        id: version
+        shell: bash
+        run: |
+          VERSION=$(grep '#define MyAppVersion' installer/setup.iss | sed 's/.*"\(.*\)".*/\1/')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Install Inno Setup
         run: choco install innosetup -y
@@ -31,3 +41,17 @@ jobs:
           name: PdfToPic-Windows-Installer
           path: installer/output/*.exe
           if-no-files-found: error
+
+      - name: Publish to Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: PDF转图片 v${{ steps.version.outputs.version }}
+          body: |
+            Windows 安装程序，由 GitHub Actions 自动构建。
+
+            **系统要求：** Windows 7 SP1 及以上（64 位）
+
+            **安装包：** PdfToPic_Setup_${{ steps.version.outputs.version }}.exe
+          files: installer/output/*.exe
+          make_latest: true
