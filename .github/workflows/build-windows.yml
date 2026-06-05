@@ -50,7 +50,7 @@ jobs:
           body: |
             Windows 安装程序，由 GitHub Actions 自动构建。
 
-            **系统要求：** Windows 7 SP1 及以上（64 位）
+            **系统要求：** Windows 10 / 11 及更高版本（64 位）
 
             **安装包：** PdfToPic_Setup_${{ steps.version.outputs.version }}.exe
           files: installer/output/*.exe

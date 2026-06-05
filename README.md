@@ -1,10 +1,6 @@
 # PDF 转图片工具
 
-一款 Windows 桌面应用，支持将 PDF 批量转换为 PNG、JPEG、BMP、TIFF、WEBP、GIF 等常见图片格式，并提供 32/64 位安装程序。
-
-**在线首页（公开访问）：** https://leobot-cyber.github.io/pdf2pic/
-
-> **首次启用 GitHub Pages（只需一次）：** 仓库 **Settings → Pages → Build and deployment** → Source 选 **Deploy from a branch** → Branch 选 **main**，Folder 选 **/docs** → **Save**。约 1 分钟后首页即可访问。
+一款 Windows 桌面应用，支持将 PDF 批量转换为 PNG、JPEG、BMP、TIFF、WEBP、GIF 等常见图片格式。适配 **Windows 10 / 11** 及当前主流 64 位系统。
 
 ## 下载
 
@@ -12,7 +8,7 @@
 
 | 平台 | 说明 | 下载 |
 |------|------|------|
-| Windows 7 SP1+ | 64 位安装程序 | [**PdfToPic_Setup_1.0.0.exe**](https://github.com/Leobot-cyber/pdf2pic/releases/latest/download/PdfToPic_Setup_1.0.0.exe) |
+| Windows 10 / 11（64 位） | 安装程序 | [**PdfToPic_Setup_1.0.0.exe**](https://github.com/Leobot-cyber/pdf2pic/releases/latest/download/PdfToPic_Setup_1.0.0.exe) |
 
 > 安装包公开发布在 [Releases](https://github.com/Leobot-cyber/pdf2pic/releases)，**无需登录即可下载**。推送 `main` 分支后自动构建并更新。
 
@@ -28,7 +24,7 @@
 - **页码范围**：可转换全部页或指定页，如 `1-5`、`1,3,5`
 - **自定义输出目录**：按 PDF 文件名自动创建子文件夹
 - **中英文界面**：右上角可切换语言
-- **Windows 安装程序**：支持 Windows 7 SP1 及以上（32 位 / 64 位）
+- **Windows 安装程序**：支持 Windows 10 / 11 及更高版本（64 位）
 
 ## 界面说明
 
@@ -96,11 +92,17 @@ build.bat              :: 仅打包程序
 build_installer.bat    :: 仅生成安装包（需先安装 Inno Setup 6）
 ```
 
+### 系统要求
+
+- **Windows 10**（64 位）或更高版本，包括 **Windows 11**
+- 推荐在最新版 Windows 上运行，以获得最佳兼容性
+
+GitHub Actions 在 **windows-latest**（当前为 Windows Server 2022，与 Win 10/11 用户态兼容）上构建 64 位安装包。
+
 ### 32/64 位说明
 
-- 在 **64 位 Windows** 上运行 `build.bat` → 生成 64 位程序
-- 在 **32 位 Windows** 上运行 `build.bat` → 生成 32 位程序
-- 若需同一安装包兼容两种架构，请分别在两种系统上构建，将产物放入 `dist\x64\` 和 `dist\x86\`，再运行 `build_installer.bat`（当前脚本会优先使用与系统匹配的版本）
+- 公开发布的安装包为 **64 位**，适用于 Windows 10 / 11 等主流系统
+- 若需在 32 位 Windows 上构建，可在对应系统上本地运行 `build_all.bat`
 
 ## 项目结构
 

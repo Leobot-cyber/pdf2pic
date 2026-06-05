@@ -1,5 +1,5 @@
 ; PDF转图片 - Inno Setup 安装脚本
-; 支持 Windows 32 位与 64 位（由 build_installer.bat 预置 staging 目录）
+; 支持 Windows 10 / 11 及更高版本（64 位，由 build_installer.bat 预置 staging 目录）
 
 #define MyAppName "PDF转图片"
 #define MyAppVersion "1.0.0"
@@ -22,9 +22,9 @@ Compression=lzma2/ultra64
 SolidCompression=yes
 WizardStyle=modern
 PrivilegesRequired=lowest
-ArchitecturesAllowed=x86 x64compatible
+ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
-MinVersion=6.1sp1
+MinVersion=10.0
 
 [Languages]
 Name: "chinesesimplified"; MessagesFile: "languages\ChineseSimplified.isl"
