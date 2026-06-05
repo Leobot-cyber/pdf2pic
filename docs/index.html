@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF 转图片工具</title>
+  <meta name="description" content="Windows 桌面应用，支持 PDF 批量转换为 PNG、JPEG、BMP、TIFF、WEBP、GIF 等格式。">
+  <style>
+    :root {
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+
+    .download-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      margin-bottom: 40px;
+    }
+
+    .download-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--blue-dark); }
+
+    .meta {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section { margin-bottom: 40px; }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+
+    .preview {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .preview img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--blue); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PDF 转图片工具</h1>
+      <p class="subtitle">
+        一款 Windows 桌面应用，支持将 PDF 批量转换为 PNG、JPEG、BMP、TIFF、WEBP、GIF 等常见图片格式。
+      </p>
+    </header>
+
+    <div class="download-card">
+      <p>免费下载，无需登录，适用于 Windows 7 SP1 及以上（64 位）</p>
+      <a class="btn" id="download-btn" href="https://github.com/Leobot-cyber/pdf2pic/releases/latest/download/PdfToPic_Setup_1.0.0.exe">
+        下载 Windows 安装程序
+      </a>
+      <p class="meta">
+        也可前往
+        <a href="https://github.com/Leobot-cyber/pdf2pic/releases/latest">GitHub Releases</a>
+        查看所有版本
+      </p>
+    </div>
+
+    <section>
+      <h2>界面预览</h2>
+      <div class="preview">
+        <img src="images/installer-ui-preview.png" alt="安装向导与主程序界面预览">
+      </div>
+    </section>
+
+    <section>
+      <h2>功能特性</h2>
+      <div class="features">
+        <div class="feature">
+          <strong>批量转换</strong>
+          <span>一次添加多个 PDF，支持拖拽上传</span>
+        </div>
+        <div class="feature">
+          <strong>多种格式</strong>
+          <span>PNG、JPEG、BMP、TIFF、WEBP、GIF</span>
+        </div>
+        <div class="feature">
+          <strong>可调分辨率</strong>
+          <span>96 / 150 / 200 / 300 / 600 DPI</span>
+        </div>
+        <div class="feature">
+          <strong>页码范围</strong>
+          <span>全部页或指定页，如 1-5、1,3,5</span>
+        </div>
+        <div class="feature">
+          <strong>中英文界面</strong>
+          <span>右上角可切换语言</span>
+        </div>
+        <div class="feature">
+          <strong>安装即用</strong>
+          <span>Inno Setup 安装向导，一键完成部署</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        开源项目 ·
+        <a href="https://github.com/Leobot-cyber/pdf2pic">GitHub 仓库</a> ·
+        MIT License
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    fetch("https://api.github.com/repos/Leobot-cyber/pdf2pic/releases/latest")
+      .then((res) => res.json())
+      .then((data) => {
+        const asset = data.assets?.find((item) => item.name.endsWith(".exe"));
+        if (asset) {
+          document.getElementById("download-btn").href = asset.browser_download_url;
+        }
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

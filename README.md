@@ -2,6 +2,22 @@
 
 一款 Windows 桌面应用，支持将 PDF 批量转换为 PNG、JPEG、BMP、TIFF、WEBP、GIF 等常见图片格式，并提供 32/64 位安装程序。
 
+**在线首页（公开访问）：** https://leobot-cyber.github.io/pdf2pic/
+
+## 下载
+
+[![Latest Release](https://img.shields.io/github/v/release/Leobot-cyber/pdf2pic?label=Latest%20Release&style=flat-square)](https://github.com/Leobot-cyber/pdf2pic/releases/latest)
+
+| 平台 | 说明 | 下载 |
+|------|------|------|
+| Windows 7 SP1+ | 64 位安装程序 | [**PdfToPic_Setup_1.0.0.exe**](https://github.com/Leobot-cyber/pdf2pic/releases/latest/download/PdfToPic_Setup_1.0.0.exe) |
+
+> 安装包公开发布在 [Releases](https://github.com/Leobot-cyber/pdf2pic/releases)，**无需登录即可下载**。推送 `main` 分支后自动构建并更新。
+
+## 界面预览
+
+![安装向导与主程序界面预览](docs/images/installer-ui-preview.png)
+
 ## 功能特性
 
 - **批量转换**：一次添加多个 PDF 文件，支持拖拽上传（Windows）
@@ -46,9 +62,10 @@ python main.py
 
 ### 方式一：GitHub Actions 自动构建（macOS/Linux 可用）
 
-1. 将项目推送到 GitHub 仓库
-2. 在 GitHub 仓库页面 → **Actions** → **Build Windows Installer** → **Run workflow**
-3. 构建完成后，在 Run 详情页 **Artifacts** 中下载 `PdfToPic-Windows-Installer`
+1. 将项目推送到 GitHub 仓库（推送 `main` 分支会自动触发构建）
+2. 构建完成后，在仓库首页 **下载** 区域或 [Releases](https://github.com/Leobot-cyber/pdf2pic/releases/latest) 页面获取安装包
+
+也可手动触发：GitHub 仓库 → **Actions** → **Build Windows Installer** → **Run workflow**
 
 也可在终端一键触发（需安装 [GitHub CLI](https://cli.github.com/) 并登录）：
 
