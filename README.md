@@ -14,7 +14,7 @@
 
 ## 界面预览
 
-![安装向导与主程序界面预览](docs/images/installer-ui-preview.png)
+![安装向导与主程序界面预览](https://cdn.jsdelivr.net/gh/Leobot-cyber/pdf2pic@main/docs/images/installer-ui-preview.png)
 
 ## 功能特性
 
